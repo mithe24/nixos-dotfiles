@@ -18,6 +18,10 @@
             src = ../config/dmenu;
             patches = [ ];
         }))
+        (pkgs.dwmblocks.overrideAttrs (_: {
+            src = ../config/dwmblocks;
+            patches = [ ];
+        }))
         slock
     ];
 }
