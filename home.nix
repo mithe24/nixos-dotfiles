@@ -27,6 +27,9 @@
             xsetroot -cursor_name left_ptr &
             unclutter -idle 1 &
             pulseaudio --start &
+            xset s off
+            xset -dpms
+            xset s noblank
             xrandr --output DP-0 --mode 2560x1440 --rate 155 --primary &
             xrandr --output DP-3 --mode 1680x1050 --rate 60 &
         '';
