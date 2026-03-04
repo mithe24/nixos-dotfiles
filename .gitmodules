@@ -1,0 +1,20 @@
+[submodule "config/dwm"]
+	path = config/dwm
+	url = git@github.com:mithe24/dwm.git
+	branch = master
+[submodule "config/st"]
+	path = config/st
+	url = git@github.com:mithe24/st.git
+	branch = master
+[submodule "config/dmenu"]
+	path = config/dmenu
+	url = git@github.com:mithe24/dmenu.git
+	branch = master
+[submodule "config/dwmblocks"]
+	path = config/dwmblocks
+	url = git@github.com:mithe24/dwmblocks.git
+	branch = master
+[submodule "config/scripts"]
+	path = config/scripts
+	url = git@github.com:mithe24/scripts.git
+	branch = master
