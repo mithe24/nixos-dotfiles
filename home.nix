@@ -13,6 +13,7 @@
 
     imports = [
         ./modules/suckless.nix
+        ./modules/scripts.nix
         ./modules/zsh.nix
         ./modules/git.nix
         ./modules/fzf.nix
@@ -31,7 +32,7 @@
             xset -dpms
             xset s noblank
             xrandr --output DP-0 --mode 2560x1440 --rate 155 --primary &
-            xrandr --output DP-3 --mode 1680x1050 --rate 60 &
+            xrandr --output DP-3 --right-of DP-0 --mode 1680x1050 --rate 60 &
         '';
     };
 
@@ -45,7 +46,6 @@
         qutebrowser
         zathura
         wallust
-        killall
         unclutter
         nerd-fonts.agave
         xclip

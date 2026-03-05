@@ -85,6 +85,7 @@
     environment.systemPackages = with pkgs; [
         vim
         git
+        killall
     ];
 
     security.sudo.wheelNeedsPassword = false;
