@@ -44,6 +44,7 @@
         steam
         oversteer
         feh
+        nixd
         eza
         pavucontrol
         qutebrowser
