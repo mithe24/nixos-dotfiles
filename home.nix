@@ -24,6 +24,7 @@
         initExtra = ''
             ~/.fehbg &
             picom &
+            dwmblocks &
             setxkbmap us &
             xsetroot -cursor_name left_ptr &
             unclutter -idle 1 &
@@ -34,6 +35,8 @@
             xrandr --output DP-0 --mode 2560x1440 --rate 155 --primary &
             xrandr --output DP-3 --right-of DP-0 --mode 1680x1050 --rate 60 &
         '';
+        # ^~~~~~~~~ There might be a better way to launch
+        # !TODO     some of these do this
     };
 
     home.packages = with pkgs; [
