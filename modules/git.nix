@@ -27,5 +27,8 @@
                 format = "ssh";
             };
         };
+        extraConfig = {
+            core.pager = "nvim +Man!";
+        };
     };
 }
