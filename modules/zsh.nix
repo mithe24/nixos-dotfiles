@@ -12,6 +12,7 @@
             precmd() {
                 local cwd branch tag title
                 cwd="''${PWD/#$HOME/~}"
+
                 if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
                     branch=$(git symbolic-ref --short HEAD 2>/dev/null)
                     tag=$(git describe --tags --abbrev=0 2>/dev/null)
@@ -21,7 +22,8 @@
                 else
                     title="''${cwd}"
                 fi
-                    print -Pn "\e]0;''${title}\a"
+
+                print -Pn "\e]0;''${title}\a"
             }
 
             # Shell options
