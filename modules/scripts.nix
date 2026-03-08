@@ -9,7 +9,7 @@
                 mkdir -p $out/bin
                 install -m755 *.sh $out/bin
 
-                # strip .sh extensions to match your Makefile's intent
+                # strip .sh extensions
                 for f in $out/bin/*.sh; do
                     mv "$f" "''${f%.sh}"
                 done
