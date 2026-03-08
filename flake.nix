@@ -20,6 +20,10 @@
                 config.allowUnfree = true;
                 overlays = [ neovim-nightly-overlay.overlays.default ];
             };
+            pkgs-unstable = import nixpkgs-unstable {  # Add this
+            inherit system;
+                config.allowUnfree = true;
+            };
         in {
             devShells.${system}.suckless = pkgs.mkShell {
                 packages = with pkgs; [
@@ -47,6 +51,7 @@
                             useUserPackages = true;
                             users.mithe = import ./home.nix;
                             backupFileExtension = "bak";
+                            extraSpecialArgs = { inherit pkgs-unstable; };
                         };
                     }
                 ];
