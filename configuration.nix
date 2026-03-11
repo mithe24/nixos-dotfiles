@@ -12,6 +12,15 @@
 
     networking.hostName = "desktop";
     networking.networkmanager.enable = true;
+    services.avahi = {
+        enable = true;
+        nssmdns4 = true;
+        publish = {
+            enable = true;
+            addresses = true;
+            workstation = true;
+        };
+    };
 
     time.timeZone = "Europe/Copenhagen";
 
@@ -46,6 +55,12 @@
 
     hardware.nvidia.prime.offload.enable = false;
 
+    services.udev.packages = with pkgs; [ oversteer ];
+    services.udev.extraRules = ''
+        ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c261", RUN+="${pkgs.usb-modeswitch}/bin/usb_modeswitch -v 046d -p c261 -m 01 -r 01 -C 03 -M '0f00010142'"
+    '';
+    hardware.new-lg4ff.enable = true;
+
     services.displayManager.ly.enable = true;
     services.xserver = {
         enable = true;
@@ -64,7 +79,7 @@
     programs.zsh.enable = true;
     users.users.mithe = {
         isNormalUser = true;
-        extraGroups = [ "wheel" ];
+        extraGroups = [ "wheel" "input" ];
         shell = pkgs.zsh;
         packages = with pkgs; [
             tree
@@ -86,6 +101,7 @@
         vim
         git
         killall
+        oversteer
     ];
 
     security.sudo.wheelNeedsPassword = false;
