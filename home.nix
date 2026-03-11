@@ -42,8 +42,8 @@
     home.packages = with pkgs; [
         neovim
         steam
-        oversteer
         feh
+        vlc
         nixd
         eza
         pavucontrol
@@ -54,6 +54,8 @@
         nerd-fonts.agave
         xclip
         ffmpeg
+        zip
+        unzip
         git
     ];
 
